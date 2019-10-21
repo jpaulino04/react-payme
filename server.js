@@ -10,6 +10,7 @@ const PORT          = process.env.PORT || 5000;
 
 
 //Init Middleware
+//Sample comment
 app.use(express.json({ extended: false }));
 app.use(express.static('client/build'));
 
