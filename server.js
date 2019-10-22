@@ -15,12 +15,12 @@ app.use(express.static('client/build'));
 
 
 //Db Connection
-const pool = mysql.createPool(db.db);
-pool.getConnection(function(err, connection) {
-    if (err) throw err; // not connected!
+// const pool = mysql.createPool(db.db);
+// pool.getConnection(function(err, connection) {
+//     if (err) throw err; // not connected!
 
-    console.log("Connected to mysql!")
-})
+//     console.log("Connected to mysql!")
+// })
 
 
 
