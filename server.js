@@ -7,16 +7,24 @@ const db            = require('./config');
 const mysql         = require('mysql');
 const PORT          = process.env.PORT || 5000;
 const passport      = require('passport');
-
-
+const session       = require('express-session');
 
 //Init Middleware
 app.use(express.json({ extended: false }));
 app.use(express.static('client/build'));
 
+//Add session support
+//Saves sessions on the server
+//Not good for multiple servers
+app.use(session({  
+    secret: process.env.SESSION_SECRET || 'simple_session_secret',
+    resave: false,
+    saveUninitialized: false,
+}));
 
 //passport
 app.use(passport.initialize());
+app.use(passport.session());
 require("./config/passport");
 
 //Db Connection

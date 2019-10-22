@@ -2,9 +2,8 @@ const express   = require('express');
 const router    = express.Router();
 const passport  = require('passport');
 const auth      = require('../config')
+const accessMiddleware = require('../middlewares/accessMiddleware')
 const {check, validationResult} = require('express-validator')
-
-
 
 /* GET Google Authentication API. */
 router.get(
@@ -22,9 +21,14 @@ router.get(
     }
 );
 
+router.get("/welcome", accessMiddleware, function(req,res) {
+    var token = req.user.token;
+    res.redirect("http://localhost:3000/main?token=" + token);
+})
+
 router.get('/logout', function(req, res){
     req.logout();
-    res.redirect('/');
+    res.redirect('http://localhost:3000/');
   });
 
 module.exports = router;
