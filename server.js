@@ -30,9 +30,7 @@ require("./config/passport");
 
 
 //Define routes
-app.use('/', require('./routes/login'))
-
-
+app.use('/', require('./routes/auth'))
 
 
 

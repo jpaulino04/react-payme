@@ -9,7 +9,7 @@ const LandinPage = () => {
   return (
     <Fragment>
        <div className="container text-center">
-         <h1 className="text-center text-info">Welcome to DevOps</h1>
+         <h1 className="text-center text-info">DevOps Engineering</h1>
          <a href="http://localhost:5000/auth/google" className="button btn btn-large mx-auto bg-info text-dark">
           <div>
             <span class="button-label">Google Login</span>
