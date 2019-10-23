@@ -3,20 +3,10 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/layout/Header"
 import LandingPage from "./components/landingpage/LandingPage";
-import Welcome from "./components/Welcome"
-import queryString from "query-string"; //to parse query strings
+import Welcome from "./components/Welcome";
+import PropTypes from 'prop-types';
 
 class App extends Component {
-
-  //This needs to be fixed:
-  // componentWillMount() {
-  //     var query = queryString.parse(this.props.location.search);
-  //     if (query.token) {
-  //       window.localStorage.setItem("jwt", query.token);
-  //       this.props.history.push("/");
-  //   }
-  // }
-
   render() {
     return (
       <div>
@@ -24,8 +14,8 @@ class App extends Component {
           <NavBar/>
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route exact path="/main" component={Welcome} />
-          </Switch>
+            <Route exact path="/main" location={this.props.location} component={Welcome} />
+           </Switch>
         </Router>
     </div>
     )

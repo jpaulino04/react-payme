@@ -27,6 +27,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./config/passport");
 
+//Enable cors
+app.use(cors())
+
 //Db Connection
 // const pool = mysql.createPool(db.db);
 // pool.getConnection(function(err, connection) {

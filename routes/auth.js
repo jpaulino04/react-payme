@@ -16,13 +16,13 @@ router.get(
     "/auth/google/callback",
     passport.authenticate("google", { failureRedirect: "/", session: true }),
     function(req, res) {
-        var token = req.user.token; //via serialize/deserialize user
+        var token = req.user.token; //via serialize/deserialize user     
         res.redirect("http://localhost:3000/main?token=" + token);
     }
 );
 
 router.get("/welcome", accessMiddleware, function(req,res) {
-    var token = req.user.token;
+    var token = req.user.token;    
     res.redirect("http://localhost:3000/main?token=" + token);
 })
 
