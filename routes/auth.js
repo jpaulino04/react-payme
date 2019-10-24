@@ -18,13 +18,11 @@ router.get('/auth/google', passport.authenticate("google", { scope: ["profile", 
 // token.  If authorization was granted, the user will be logged in.
 // Otherwise, authentication has failed.
 router.get('/auth/google/callback',
-    passport.authenticate(
-        'google', 
-        { 
-            successRedirect: 'http://localhost:3000/main',
-            failureRedirect: 'http://localhost:3000/' 
+    passport.authenticate("google", { failureRedirect: "/", session: true }),
+        function(req, res) {
+            var token = req.user.token; //via serialize/deserialize user     
+            res.redirect("http://localhost:3000/main?token=" + token);
         }
-    )
 );
 //-------------------------------------------------------------------------Google Auth Routes
 /* GET Google Authentication API. */

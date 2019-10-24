@@ -18,6 +18,7 @@ const GoogleStrategy    = require( 'passport-google-oauth2' ).Strategy;
 //this stores the entire user object in req.user
 //note you may want to keep the amount of data in the session small (maybe the id only), the user might be too big
 //you may only want some info
+
 passport.serializeUser(function(user, done) {
     done(null, user);
 });
@@ -25,6 +26,27 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
     done(null, user);
 });
+
+//-------------------------------Passport Google Auth2 Strategy
+passport.use(new GoogleStrategy({
+    clientID:     auth.google_id,
+    clientSecret: auth.google_secret,
+    callbackURL: "http://localhost:5000/auth/google/callback",
+    passReqToCallback   : true
+  },
+
+  function(request, accessToken, refreshToken, profile, done) {
+    const userData = {
+        email: profile.emails[0].value,
+        name: profile.displayName,
+        token: accessToken
+    };
+    //refresh token refreshes the access token
+    // we are not using either the access or refresh token in our app    
+    done(null, userData);
+  }            
+));
+
 
 // passport.use(new LocalStrategy(
 //     function(username, password, done) {
@@ -41,23 +63,6 @@ passport.deserializeUser(function(user, done) {
 //     }
 // ));
 
-//-------------------------------Passport Google Auth2 Strategy
-passport.use(new GoogleStrategy({
-    clientID:     auth.google_id,
-    clientSecret: auth.google_secret,
-    callbackURL: "http://localhost:5000/auth/google/callback",
-    passReqToCallback   : true
-  },
-
-  function(request, accessToken, refreshToken, profile, done) {
-    const userData = {
-        email: profile.emails[0].value,
-        name: profile.displayName,
-        token: accessToken
-    };
-    done(null, userData);
-  }            
-));
 
 // -------------------------------Google Strategy
 // passport.use(

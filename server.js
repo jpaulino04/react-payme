@@ -41,12 +41,8 @@ pool.getConnection(function(err, connection) {
     console.log("Connected to mysql!")
 })
 
-
-
 //Define routes
 app.use('/', require('./routes/auth'))
-
-
 
 //Serve public files
 // app.get('*', (req, res) => {
