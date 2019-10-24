@@ -6,6 +6,8 @@ import LandingPage from "./components/landingpage/LandingPage";
 import Welcome from "./components/Welcome";
 import PropTypes from 'prop-types';
 
+//Browser router is the brain
+//Route to setup rules
 class App extends Component {
   render() {
     return (

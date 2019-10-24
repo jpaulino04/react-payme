@@ -24,6 +24,11 @@ router.get('/auth/google/callback',
             res.redirect("http://localhost:3000/main?token=" + token);
         }
 );
+
+router.get('/auth/current_user', (req, res) => {
+    res.send(req.user);
+})
+
 //-------------------------------------------------------------------------Google Auth Routes
 /* GET Google Authentication API. */
 // router.get(

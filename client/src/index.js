@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Provider } from 'react-redux';
-import { createStore, applyMyddleware} from 'redux';
+import { Provider } from 'react-redux'; //wire things up
+import { createStore, applyMiddleware} from 'redux';
+import reduxThunk from 'redux-thunk';
 
 import App from './App';
+import reducers from './reducers';
 
-const store = createStore(() => [], {}, applyMyddleware())
-
+//first paramater is the reducers
+//second parameter is the initial state ({})
+//To begin (testing), your reducer could be () => []
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
 ReactDOM.render(
     <Provider store={store}> <App /> </Provider>,     
