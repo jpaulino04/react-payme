@@ -1,10 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Provider } from 'react-redux'; //wire things up
+import { createStore, applyMiddleware} from 'redux';
+import reduxThunk from 'redux-thunk';
+
 import App from './App';
+import reducers from './reducers';
 
+//first paramater is the reducers
+//second parameter is the initial state ({})
+//To begin (testing), your reducer could be () => []
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk))
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}> <App /> </Provider>,     
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
