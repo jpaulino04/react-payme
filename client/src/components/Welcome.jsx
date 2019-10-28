@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import queryString from "query-string"; //to parse query strings
 class Welcome extends Component {
     
-    componentWillMount(){
+    componentDidMount(){
+        //this is just an example of querying data
+        //This should be done in your action creators/reducers
         try {
             var query = queryString.parse(this.props.location.search);
             if (query.token) {
