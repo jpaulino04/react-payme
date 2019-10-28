@@ -1,6 +1,6 @@
 import React, {Fragment, Component} from 'react';
 import { connect } from 'react-redux';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Header extends Component{  
 
@@ -18,12 +18,12 @@ class Header extends Component{
                 )
         }
     }
-
     render(){
             return (
                 <Fragment>
                     <nav className="navbar navbar-dark bg-dark ">
-                        <span className="navbar-brand mb-0">DevOps</span>
+                        {/* If user is logged in return /main otherwiser return '/'*/}
+                        <Link to={this.props.auth ? '/main' : '/'}><span className="navbar-brand mb-0">DevOps</span></Link>
                         <ul>
                             {this.renderContent()}
                         </ul>
@@ -43,6 +43,9 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps)(Header);
+//Use the connect react helper to connect with redux
+//first argument for connect is for mapStateToprops (not use here)
+//Second argument, pass the action creators ---> not calling action creator here
 
 {/*
 To link this component to redux we:

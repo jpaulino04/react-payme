@@ -17,6 +17,8 @@ class App extends Component {
   componentDidMount(){
     //action creators are now as props
     this.props.fetchUser()
+    // notice we are calling this action creator on the root
+    // will be called for any component
   }
 
   render() {
