@@ -2,14 +2,8 @@ import React, {Fragment} from 'react'
 import axios from 'axios';
 // import {Link} from 'react-router-dom';
 
-export default function Header() {
-    
-    // (async ()=>{
-    //     const url = 'http://localhost:5000/auth/current_user'
-    //     const res = await axios.get(url);
-    //     console.log(res)
-    // })()
-    
+export default function Header() {    
+   
     return (
         <Fragment>
             <nav className="navbar navbar-dark bg-dark ">
