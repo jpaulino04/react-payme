@@ -30,21 +30,6 @@ router.get('/auth/current_user', (req, res) => {
 })
 
 //-------------------------------------------------------------------------Google Auth Routes
-/* GET Google Authentication API. */
-// router.get(
-//     "/auth/google",
-//     passport.authenticate("google", { scope: ["profile", "email"] })
-//     //“profile” & “email” in scope array to get user’s profile and email address.
-// );
-
-// router.get(
-//     "/auth/google/callback",
-//     passport.authenticate("google", { failureRedirect: "/", session: true }),
-//     function(req, res) {
-//         var token = req.user.token; //via serialize/deserialize user     
-//         res.redirect("http://localhost:3000/main?token=" + token);
-//     }
-// );
 
 // router.get("/welcome", accessMiddleware, function(req,res) {
 //     var token = req.user.token;    

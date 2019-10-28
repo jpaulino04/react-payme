@@ -6,14 +6,12 @@ import { FETCH_USER } from './types';
 // If finds a function, thunk will call it passing dispatch
 
 
-export const fetchUser = () => {
-    return async function(dispatch) {
-        const url = '/auth/current_user'
-        const res = await axios.get(url)
+export const fetchUser = () => async dispatch => {
+    const url = '/auth/current_user'
+    const res = await axios.get(url)
 
-        dispatch({
-            type: FETCH_USER,
-            payload: res
-        })
-    }    
-};
+    dispatch({
+        type: FETCH_USER,
+        payload: res
+    })
+}    
