@@ -1,6 +1,6 @@
 const passport          = require("passport");
 const auth              = require('./index');
-const LocalStrategy     = require('passport-local').Strategy;
+// const LocalStrategy     = require('passport-local').Strategy;
 // const OAuth2Strategy    = require('passport-oauth').OAuth2Strategy;
 const GoogleStrategy    = require( 'passport-google-oauth2' ).Strategy;
 
