@@ -62,25 +62,3 @@ passport.use(new GoogleStrategy({
 //         });
 //     }
 // ));
-
-
-// -------------------------------Google Strategy
-// passport.use(
-//  new GoogleStrategy(
-//   {
-//    clientID: auth.google_id,
-//    clientSecret: auth.google_secret,
-//    callbackURL: "http://localhost:5000/auth/google/callback"
-//   },
-//   function(accessToken, refreshToken, profile, done) {
-//    var userData = {
-//     email: profile.emails[0].value,
-//     name: profile.displayName,
-//     token: accessToken
-//    };
-//    done(null, userData);
-//   }
-//  )
-// );
-
-// https://hackernoon.com/m-e-r-n-stack-application-using-passport-for-authentication-920b1140a134
