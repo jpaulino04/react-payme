@@ -5,15 +5,15 @@ class Welcome extends Component {
     componentDidMount(){
         //this is just an example of querying data
         //This should be done in your action creators/reducers
-        try {
-            var query = queryString.parse(this.props.location.search);
-            if (query.token) {
-                window.localStorage.setItem("jwt", query.token);
-                this.props.history.push("/main");
-            }            
-        } catch (error) {
-            console.log(error);
-        }
+        // try {
+        //     var query = queryString.parse(this.props.location.search);
+        //     if (query.token) {
+        //         window.localStorage.setItem("jwt", query.token);
+        //         this.props.history.push("/main");
+        //     }            
+        // } catch (error) {
+        //     console.log(error);
+        // }
     }
   
     render() {        

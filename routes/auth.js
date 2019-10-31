@@ -32,10 +32,10 @@ router.get('/auth/current_user', (req, res) => {
 
 //-------------------------------------------------------------------------Google Auth Routes
 
-// router.get("/welcome", accessMiddleware, function(req,res) {
-//     var token = req.user.token;    
-//     res.redirect("http://localhost:3000/main?token=" + token);
-// })
+router.get("/welcome", accessMiddleware, function(req,res) {
+    var token = req.user.token;    
+    res.redirect("http://localhost:3000/main?token=" + token);
+})
 
 //-------------------General Routes----------------------------
 

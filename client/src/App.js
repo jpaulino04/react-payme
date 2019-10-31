@@ -11,8 +11,7 @@ import * as actions from './actions';
 //Browser router is the brain
 //Route to setup rules
 class App extends Component {
-  //with class components, you get lifecycle methods
-  
+  //with class components, you get lifecycle methods  
   //preferred instead of Willmount
   componentDidMount(){
     //action creators are now as props
@@ -28,10 +27,10 @@ class App extends Component {
           <NavBar/>
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route exact path="/main" location={this.props.location} component={Welcome} />
+            <Route exact path="/main" component={Welcome} />
            </Switch>
         </Router>
-    </div>
+      </div>
     )
   }
 }

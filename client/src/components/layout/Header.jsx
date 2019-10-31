@@ -1,6 +1,7 @@
 import React, {Fragment, Component} from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
+import Payments from '../Payments';
 
 class Header extends Component{  
 
@@ -11,11 +12,12 @@ class Header extends Component{
             case false: 
                 return ""
             default:
-                return (
+                return [
+                    <li className="header-li"> <Payments/> </li>,
                     <li className="header-li">
                         <a href="http://localhost:5000/logout" className="text-warning ml-auto px-1">Logout</a>
                     </li>
-                )
+                ]
         }
     }
     render(){
@@ -23,7 +25,7 @@ class Header extends Component{
                 <Fragment>
                     <nav className="navbar navbar-dark bg-dark ">
                         {/* If user is logged in return /main otherwiser return '/'*/}
-                        <Link to={this.props.auth ? '/main' : '/'}><span className="navbar-brand mb-0">DevOps</span></Link>
+                        <Link to={this.props.auth? '/main' : '/'}><span className="navbar-brand mb-0">DevOps</span></Link>
                         <ul>
                             {this.renderContent()}
                         </ul>
