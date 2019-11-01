@@ -13,9 +13,9 @@ class Header extends Component{
                 return ""
             default:
                 return [
-                    <li className="header-li"> <Payments/> </li>,
-                    <li className="header-li">
-                        <a href="http://localhost:5000/logout" className="text-warning ml-auto px-1">Logout</a>
+                    <li key="1" className="header-li d-inline"> <Payments/> </li>,
+                    <li key="2" className="header-li d-inline">
+                        <a href="http://localhost:5000/logout" className="text-warning px-1">Logout</a>
                     </li>
                 ]
         }
@@ -49,9 +49,9 @@ export default connect(mapStateToProps)(Header);
 //first argument for connect is for mapStateToprops (not use here)
 //Second argument, pass the action creators ---> not calling action creator here
 
-{/*
+/*
 To link this component to redux we:
 - used the connect helper react-redux function
 - defined the mapStateToFunction
 - Finally, map all the pieces of state relevant
-*/}
+*/

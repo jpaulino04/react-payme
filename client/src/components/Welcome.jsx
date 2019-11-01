@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import queryString from "query-string"; //to parse query strings
+// import queryString from "query-string"; //to parse query strings
 class Welcome extends Component {
     
     componentDidMount(){
