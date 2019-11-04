@@ -15,13 +15,13 @@ class App extends Component {
   //preferred instead of Willmount
   componentDidMount(){
     //action creators are now as props
-    this.props.fetchUser()
+    this.props.fetchUser()    
     // notice we are calling this action creator on the root
     // will be called for any component
   }
 
   render() {
-    return (
+     return (
       <div>
         <Router>
           <NavBar/>
@@ -35,7 +35,8 @@ class App extends Component {
   }
 }
 
+
 //Use the connect react helper to connect with redux
 //first argument for connect is for mapStateToprops (not use here)
 //Second argument, pass the action creators
-export default connect(null, actions)(App);
+export default connect(null, actions)(App); 
