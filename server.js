@@ -43,6 +43,7 @@ pool.getConnection(function(err, connection) {
 
 //Define routes
 app.use('/', require('./routes/auth'))
+app.use('/', require('./routes/billingRoutes'))
 
 //Serve public files
 // app.get('*', (req, res) => {
