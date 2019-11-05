@@ -5,8 +5,8 @@ import NavBar from "./components/layout/Header"
 import LandingPage from "./components/landingpage/LandingPage";
 import Welcome from "./components/Welcome";
 // import PropTypes from 'prop-types';
-import {connect} from 'react-redux'; //connect react/redux
-import * as actions from './actions';
+import {connect} from 'react-redux'; //connect react/redux & call actions
+import * as actions from './actions'; //Import all the methods in that file
 
 //Browser router is the brain
 //Route to setup rules
