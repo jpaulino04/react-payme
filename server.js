@@ -4,7 +4,7 @@ const cors          = require('cors');
 const path          = require('path');
 const db            = require('./config/db');
 const mysql         = require('mysql');
-const bodyParser    = require("body-parser");
+const bodyParser    = require("body-parser"); 
 const cookieParser  = require('cookie-parser')
 const passport      = require('passport');
 const session       = require('express-session');
@@ -25,7 +25,8 @@ app.use(session({
 
 //passport
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false })); 
+//BodyParser takes the request body from front end and makes it available in our app via req.body
 app.use(passport.initialize());
 app.use(passport.session());
 require("./config/passport");
